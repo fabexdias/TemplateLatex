@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+%-------------------------
+% PACKAGES
+%-------------------------
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[portuguese]{babel}
+\usepackage[normalem]{ulem}
+\usepackage{anyfontsize}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{fontspec}
+\usepackage{caption}
+\usepackage{vmargin}
+\usepackage{tocloft}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage{parskip}
+\usepackage{lipsum}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage{xfrac}
+\usepackage{tikz}
+\usepackage{url}
+
+%-------------------------
+% PREÂMBULO
+%-------------------------
+\include{setup}
+
+%-------------------------
+% DOCUMENTO
+%-------------------------
+\begin{document}
+
+%-------------------------
+% CAPA
+%-------------------------
+\include{titlepage-ist}
+%\include{titlepage-tlmoto}
+
+%-------------------------
+\pagestyle{paging}
+%Isto é para as páginas passem a ter paginação
+
+%-------------------------
+% INDÍCE
+%-------------------------
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsecfont}{\normalfont}
+%Isto põe os pontinhos no índice e tira os negritos
+\tableofcontents 
+%Isto é efetivamente o que queria o índice
+\pagebreak
+
+%-------------------------
+% CORPO DO TRABALHO
+%-------------------------
+\section{Introdução}
+
+\section{Desenvolvimento}
+
+\subsection{Subsecção}
+
+\section{Conclusão}
+
+%Truque para ter bibliografia no indice
+\section{Bibliografia e Webgrafia}
+\vspace*{-0.6cm}
+\begin{thebibliography}{10}
+%Isto começa a bibliografia e o "10" deve ser alterado pelo numero de referências usadas
+
+%Bibitem é para criar um tópico novo nas referências
+\bibitem{1}
+Apresentações da Unidade Curricular Instrumentação e Medidas, Pedro M. Ramos, 2021 IST
+
+\bibitem{2}
+MATLAB, MathWork\bulurl{https://bit.ly/3EE104b}
+
+\end{thebibliography}
+
+\section{Anexos}
+
+\end{document}

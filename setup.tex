@@ -1,0 +1,47 @@
+\setmainfont{Times New Roman}
+%Isto é para definir o tipo de letra
+\setmathtt{Arial.ttf}
+%Isto é para definir o tipo de letra em modo matemático
+\sisetup{group-minimum-digits = 100}
+\sisetup{output-decimal-marker = {,}}
+%Isto é para o comando \SI{}{}
+\setmarginsrb{2 cm}{1 cm}{2 cm}{2 cm}{0.5 cm}{0.5 cm}{1.5 cm}{1 cm}
+%Isto é para definir os tamanhos das margens
+\onehalfspacing
+%Distancias entre rodapé e cabeçalho
+
+\fancypagestyle{date}{\renewcommand{\headrulewidth}{0pt}\fancyhf{}\fancyfoot[C]{\today}}
+%Isto é para pôr a data automaticamente na capa
+
+\fancypagestyle{paging}{\renewcommand{\headrulewidth}{0pt}\fancyhf{}\fancyfoot[C]{\footnotesize Página \thepage}}
+%Isto é para definir o estilo da paginação do documento e a sua localização na página
+
+\addto\captionsportuguese{\renewcommand{\contentsname}{\sffamily{Índice}}}
+%Isto é para mudar o título do índice
+\addto\captionsportuguese{\renewcommand{\refname}{}}
+%Isto é para alterar o título "Referências" que aparece originalmente associada a \begin{thebibliography}, em branco omite o título
+
+\renewcommand\thesection{\Roman{section}}
+\renewcommand\thesubsection{\thesection.\Roman{subsection}}
+\renewcommand\thesubsubsection{\thesection.\thesubsection.\Roman{subsubsection}}
+%Definição da numeração das sections e subsections, ver mais aqui https://tex.stackexchange.com/questions/3177/how-to-change-the-numbering-of-part-chapter-section-to-alphabetical-r
+
+\titlespacing\section{0pt}{1cm}{0.423cm}
+\titleformat{\section}{\normalfont\bfseries\fontsize{14}{6}\sffamily}{\thesection. }{0pt}{}
+%Isto é para os títulos das secções do trabalho
+\titlespacing\subsection{0pt}{1cm}{0.423cm}
+\titleformat{\subsection}{\normalfont\bfseries\fontsize{14}{6}\sffamily}{\thesubsection. }{0pt}{}
+%Isto é para os títulos das subsecções do trabalho
+\titlespacing\subsubsection{0pt}{1cm}{0.423cm}
+\titleformat{\subsubsection}{\normalfont\bfseries\fontsize{14}{6}\sffamily}{\thesubsubsection. }{0pt}{}
+%Isto é para os títulos das subsubsecções do trabalho
+
+\captionsetup{labelsep=endash}
+%Isto define que as \caption fiquem do tipo "Fig. X - <caption>"
+\addto\captionsportuguese{\renewcommand{\figurename}{Fig.}}
+%Estipula a legenda das figuras como sendo "Fig. X"
+\addto\captionsportuguese{\renewcommand{\tablename}{Tab.}}
+%Estipula a legenda das tabelas como sendo "Tab. X"
+
+\DeclareUrlCommand{\bulurl}{\hspace{2mm}\footnotesize\def\UrlFont{\color{blue}\ulined}}\useunder{\uline}{\ulined}{}
+%Criação de um comando para meter o link com hyperligação e a azul

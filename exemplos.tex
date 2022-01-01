@@ -1,0 +1,76 @@
+%Copiar para colocar uma equação
+%-----------------------------------
+\vspace{-0.3cm}
+\begin{equation}
+    \text{ENOB} = \frac{\text{SINAD [dB]} - 1,76}{6,02} \approx 10,046\:\text{bits}
+    \label{eq:exemplo}
+\end{equation}
+%-----------------------------------
+
+
+%Copiar para fazer uma tabela
+%-----------------------------------
+\begin{table}[H]
+    \centering
+    \caption{Título.}
+    \label{tab:exemplo}
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \cellcolor[HTML]{EFEFEF} Frequência (kHz)   &  \cellcolor[HTML]{EFEFEF} Valor eficaz (V) & \cellcolor[HTML]{EFEFEF} Valor médio (mV) &\cellcolor[HTML]{EFEFEF} $\Delta t$ (ms) & \cellcolor[HTML]{EFEFEF} $\Delta f$ (Hz) \\ \hline
+     1,70     & 3,99 & -14,3 & 0,147 & 1,7    \\ \hline
+    \end{tabular}
+\end{table}
+%-----------------------------------
+
+
+%Copiar para colocar uma imagem
+%-----------------------------------
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale = 0.6]{imagens/ist.png} 
+    \caption{Título.}
+    \label{fig:exemplo.1}
+\end{figure}
+\vspace{-0.2cm}
+%-----------------------------------
+
+
+%Copiar para colocar 2 imagens
+%-----------------------------------
+\begin{figure}[H]
+    \centering
+    \subfloat[][Título a. ]{\label{fig:exemplo.2.a}\includegraphics[width=.4\textwidth]{imagens/ist.png}}\qquad
+    \subfloat[][Título b. ]{\label{fig:exemplo.2.b}\includegraphics[width=.4\textwidth]{imagens/ist.png}}
+    \caption{Título.}
+    \label{fig:exemplo.2}
+\end{figure}
+\vspace{-0.2cm}
+%-----------------------------------
+
+
+%Copiar para colocar 4 imagens    
+%-----------------------------------
+\begin{figure}[H]
+    \centering
+    \subfloat[Título a.]{\label{fig:exemplo.3.a}\includegraphics[width=.4\textwidth]{imagens/ist.png}}\qquad
+    \subfloat[Título b.]{\label{fig:exemplo.3.b}\includegraphics[width=.4\textwidth]{imagens/ist.png}}\\
+    \subfloat[Título c.]{\label{fig:exemplo.3.c}\includegraphics[width=.4\textwidth]{imagens/ist.png}}\qquad
+    \subfloat[Título d.]{\label{fig:exemplo.3.d}\includegraphics[width=.4\textwidth]{imagens/ist.png}}
+    \caption{Título.}
+    \label{fig:exemplo.3}
+\end{figure}
+\vspace{-0.2cm}
+%-----------------------------------
+
+
+%Copiar para colocar Código MatLab
+%-----------------------------------
+\begin{lstlisting}[frame=none,language=Matlab,label={code:exemplo},backgroundcolor=\color{gray!15},numbers=none,		basicstyle=\tiny\ttfamily]
+(...)
+    for k = 1:length(X(1,:)-1)
+        X(:,k+1) = (X(:,k*h)+ h*(Matriz*([X(1,k);X(2,k)])));
+        X(1,k+1) = X(1,k+1) + d(k);
+    end
+(...)
+\end{lstlisting}
+%-----------------------------------
