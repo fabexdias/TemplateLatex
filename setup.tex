@@ -52,19 +52,19 @@
 \addto\captionsportuguese{\renewcommand{\refname}{}}
 %Isto é para alterar o título "Referências" que aparece originalmente associada a \begin{thebibliography}, em branco omite o título
 
-\renewcommand\thesection{\Roman{section}}
-\renewcommand\thesubsection{\thesection.\arabic{subsection}}
-\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
-%Definição da numeração das sections e subsections, ver mais aqui https://tex.stackexchange.com/questions/3177/how-to-change-the-numbering-of-part-chapter-section-to-alphabetical-r
+\renewcommand\thesection{\Roman{section}.}
+\renewcommand\thesubsection{\thesection\arabic{subsection}.}
+\renewcommand\thesubsubsection{\thesubsection\arabic{subsubsection}.}
+%Definição da numeração das sections e subsections
 
 \titlespacing\section{0pt}{1cm}{0.423cm}
-\titleformat{\section}{\normalfont\bfseries\fontsize{14}{6}\sffamily}{\thesection. }{0pt}{}
+\titleformat{\section}{\normalfont\bfseries\fontsize{14}{6}\sffamily}{\thesection\:\:}{0pt}{}
 %Isto é para os títulos das secções do trabalho
 \titlespacing\subsection{0pt}{1cm}{0.423cm}
-\titleformat{\subsection}{\normalfont\bfseries\fontsize{14}{6}\sffamily}{\thesubsection. }{0pt}{}
+\titleformat{\subsection}{\normalfont\bfseries\fontsize{14}{6}\sffamily}{\thesubsection\:\:}{0pt}{}
 %Isto é para os títulos das subsecções do trabalho
 \titlespacing\subsubsection{0pt}{1cm}{0.423cm}
-\titleformat{\subsubsection}{\normalfont\bfseries\fontsize{14}{6}\sffamily}{\thesubsubsection. }{0pt}{}
+\titleformat{\subsubsection}{\normalfont\bfseries\fontsize{14}{6}\sffamily}{\thesubsubsection\:\:}{0pt}{}
 %Isto é para os títulos das subsubsecções do trabalho
 
 \captionsetup{labelsep=endash}
@@ -91,8 +91,3 @@
 \addtolength{\cftsubsecnumwidth}{1mm}
 \addtolength{\cftsecnumwidth}{1mm}
 %Isto define a distância entre os números e o títulos no índice
-
-\renewcommand{\cftsubsubsecaftersnum}{.}
-\renewcommand{\cftsubsecaftersnum}{.}
-\renewcommand{\cftsecaftersnum}{.}
-%Isto põe os números do índice com um ponto, em concordância com os títulos ao longo do trabalho
