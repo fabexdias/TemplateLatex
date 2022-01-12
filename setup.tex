@@ -1,6 +1,34 @@
 %-----------------------------------------------------------------
 % Documento escrito por Fábio Dias (IST) e Beatriz Vieira (ISEG)
 %-----------------------------------------------------------------
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[portuguese]{babel}
+\usepackage[normalem]{ulem}
+\usepackage{anyfontsize}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{fontspec}
+\usepackage{caption}
+\usepackage{vmargin}
+\usepackage{tocloft}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\usepackage{parskip}
+\usepackage{lipsum}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage{xfrac}
+\usepackage{tikz}
+\usepackage{url}
+
 \setmainfont{Times New Roman}
 %Isto é para definir o tipo de letra
 \setmathtt{Arial.ttf}
@@ -25,8 +53,8 @@
 %Isto é para alterar o título "Referências" que aparece originalmente associada a \begin{thebibliography}, em branco omite o título
 
 \renewcommand\thesection{\Roman{section}}
-\renewcommand\thesubsection{\thesection.\Roman{subsection}}
-\renewcommand\thesubsubsection{\thesection.\thesubsection.\Roman{subsubsection}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
 %Definição da numeração das sections e subsections, ver mais aqui https://tex.stackexchange.com/questions/3177/how-to-change-the-numbering-of-part-chapter-section-to-alphabetical-r
 
 \titlespacing\section{0pt}{1cm}{0.423cm}
@@ -48,3 +76,23 @@
 
 \DeclareUrlCommand{\bulurl}{\hspace{2mm}\footnotesize\def\UrlFont{\color{blue}\ulined}}\useunder{\uline}{\ulined}{}
 %Criação de um comando para meter o link com hiperligação e a azul
+
+\addtocontents{toc}{\protect\thispagestyle{paging}}
+%Isto garante que o índice tem o devido rodapé
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+%Isto põe os pontinhos no índice
+
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsecfont}{\normalfont}
+%Isto tira os negritos no índice
+
+\addtolength{\cftsubsubsecnumwidth}{1mm}
+\addtolength{\cftsubsecnumwidth}{1mm}
+\addtolength{\cftsecnumwidth}{1mm}
+%Isto define a distância entre os números e o títulos no índice
+
+\renewcommand{\cftsubsubsecaftersnum}{.}
+\renewcommand{\cftsubsecaftersnum}{.}
+\renewcommand{\cftsecaftersnum}{.}
+%Isto põe os números do índice com um ponto, em concordância com os títulos ao longo do trabalho

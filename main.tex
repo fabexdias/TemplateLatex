@@ -2,36 +2,6 @@
 % Documento escrito por Fábio Dias (IST) e Beatriz Vieira (ISEG)
 %-----------------------------------------------------------------
 \documentclass[12pt]{article}
-%-------------------------
-% PACKAGES
-%-------------------------
-\usepackage[table,xcdraw]{xcolor}
-\usepackage[portuguese]{babel}
-\usepackage[normalem]{ulem}
-\usepackage{anyfontsize}
-\usepackage{mathtools}
-\usepackage{setspace}
-\usepackage{hyperref}
-\usepackage{ragged2e}
-\usepackage{graphicx}
-\usepackage{titlesec}
-\usepackage{fancyhdr}
-\usepackage{listings}
-\usepackage{fontspec}
-\usepackage{caption}
-\usepackage{vmargin}
-\usepackage{tocloft}
-\usepackage{wrapfig}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{siunitx}
-\usepackage{parskip}
-\usepackage{lipsum}
-\usepackage{subfig}
-\usepackage{float}
-\usepackage{xfrac}
-\usepackage{tikz}
-\usepackage{url}
 
 %-------------------------
 % PREÂMBULO
@@ -51,33 +21,31 @@
 
 %-------------------------
 \pagestyle{paging}
-%Isto é para as páginas passem a ter paginação
+%Isto é para que as páginas passem a ter paginação
 
 %-------------------------
 % INDÍCE
 %-------------------------
-\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-\renewcommand{\cftsecpagefont}{\normalfont}
-\renewcommand{\cftsecfont}{\normalfont}
-%Isto põe os pontinhos no índice e tira os negritos
-\tableofcontents 
+\tableofcontents
 %Isto é efetivamente o que cria o índice
 \pagebreak
 
 %-------------------------
 % CORPO DO TRABALHO
 %-------------------------
-\section{Introdução}
+\section*{Introdução}
+%Como fazer sections que não são numeradas nem contabilizadas no índice
 
 \section{Desenvolvimento}
 
 \subsection{Subsecção}
+\subsubsection{Subsubsecção}
 
 \section{Conclusão}
 
 %Truque para ter bibliografia no indice
 \section{Bibliografia e Webgrafia}
-\vspace*{-0.6cm}
+\vspace*{-0.7cm}
 \begin{thebibliography}{10}
 %Isto começa a bibliografia e o "10" deve ser alterado pelo numero de referências usadas
 
