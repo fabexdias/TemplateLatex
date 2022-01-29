@@ -4,7 +4,7 @@
 
 %Copiar para colocar uma equação
 %-----------------------------------
-\vspace{-0.3cm}
+\vspace*{-0.3cm}
 \begin{equation}
     \text{ENOB} = \frac{\text{SINAD [dB]} - 1,76}{6,02} \approx 10,046\:\text{bits}
     \label{eq:exemplo}
@@ -14,6 +14,7 @@
 
 %Copiar para fazer uma tabela
 %-----------------------------------
+\vspace*{0.2cm}
 \begin{table}[H]
     \centering
     \caption{Título.}
@@ -35,7 +36,6 @@
     \caption{Título.}
     \label{fig:exemplo.1}
 \end{figure}
-\vspace{-0.2cm}
 %-----------------------------------
 
 
@@ -48,7 +48,6 @@
     \caption{Título.}
     \label{fig:exemplo.2}
 \end{figure}
-\vspace{-0.2cm}
 %-----------------------------------
 
 
@@ -63,7 +62,6 @@
     \caption{Título.}
     \label{fig:exemplo.3}
 \end{figure}
-\vspace{-0.2cm}
 %-----------------------------------
 
 
@@ -75,13 +73,12 @@
     \caption{Título.}
     \label{fig:exemplo.4}
 \end{wrapfigure}
-\vspace{-0.2cm}
 %-----------------------------------
 
 
 %Copiar para colocar Código MatLab
 %-----------------------------------
-\begin{lstlisting}[frame=none,language=Matlab,label={code:exemplo},backgroundcolor=\color{gray!15},numbers=none,		basicstyle=\tiny\ttfamily]
+\begin{lstlisting}[frame=none,language=Matlab,label={code:exemplo},firstnumber=1,backgroundcolor=\color{gray!15}, basicstyle=\tiny\ttfamily]
 (...)
     for k = 1:length(X(1,:)-1)
         X(:,k+1) = (X(:,k*h)+ h*(Matriz*([X(1,k);X(2,k)])));
