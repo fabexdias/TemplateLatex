@@ -6,22 +6,66 @@
 %-----------------------------------
 \vspace*{-0.3cm}
 \begin{equation}
-    \text{ENOB} = \frac{\text{SINAD} - 1,76}{6,02} \approx 10,046\:\text{bits}
-    \label{eq:exemplo}
+    \text{ENOB} = \frac{\text{SINAD [dB]} - 1,76}{6,02} \approx 10,046\:\text{bits}
+    \label{eq:exemplo.1}
 \end{equation}
+%-----------------------------------
+
+
+%Copiar para colocar um sistema de equações
+%-----------------------------------
+\vspace*{-0.3cm}
+\begin{equation}
+    \begin{cases}
+    V_{CC} = R_{C}\left(I_C + I_B\right) + R_F I_B + V_{BEon}\\
+    V_{CC} = V_{CE} + R_{C}\left(I_C + I_B\right)\\
+    I_C = \beta I_B\\
+    I_E = I_C + I_B = \left(\beta + 1\right)I_B
+    \end{cases}
+    \label{eq:exemplo.2}
+\end{equation}
+%-----------------------------------
+
+
+%Copiar para colocar 2 sistemas de equações side-by-side
+%-----------------------------------
+\vspace*{-0.3cm}
+\centering{\noindent\begin{minipage}{.45\linewidth}
+\begin{equation}
+    \begin{cases}
+    h_{11A} = \frac{V_1}{I_1}_{V_2 = 0} = R_{in}\\
+    h_{12A} = \frac{V_1}{V_2}_{I_1 = 0} = 0\\
+    h_{21A} = \frac{I_2}{I_1}_{V_2 = 0} = \frac{-AR_{in}}{R_{out}+r_{\pi}}\\
+    h_{22A} = \frac{I_2}{V_2}_{I_1 = 0} = \frac{1}{R_{out} + r_{\pi}} + \frac{1}{r_o}
+    \end{cases}
+    \label{eq:exemplo.3}
+\end{equation}
+\end{minipage}
+\begin{minipage}{.45\linewidth}
+\begin{equation}
+    \begin{cases}
+    h_{11\beta} = \frac{V_1}{I_1}_{V_2 = 0} = R_1 // R_2\\
+    h_{12\beta} = \frac{V_1}{V_2}_{I_1 = 0} = \frac{R_2}{R_2 + R_1}\\
+    h_{21\beta} = \frac{I_2}{I_1}_{V_2 = 0} = - \frac{R_2}{R_2 + R_1}\\
+    h_{22\beta} = \frac{I_2}{V_2}_{I_1 = 0} = \frac{1}{R_2 + R_1}
+    \end{cases}
+    \label{eq:exemplo.4}
+\end{equation}
+\end{minipage}}
 %-----------------------------------
 
 
 %Copiar para fazer uma tabela
 %-----------------------------------
 \begin{table}[H]
-    \centering
     \caption{Título.}
     \label{tab:exemplo}
-    \begin{tabular}{|c|c|c|c|c|}
-    \hline
-    \cellcolor[HTML]{EFEFEF} Frequência (kHz)   &  \cellcolor[HTML]{EFEFEF} Valor eficaz (V) & \cellcolor[HTML]{EFEFEF} Valor médio (mV) &\cellcolor[HTML]{EFEFEF} $\Delta t$ (ms) & \cellcolor[HTML]{EFEFEF} $\Delta f$ (Hz) \\ \hline
-     1,70     & 3,99 & -14,3 & 0,147 & 1,7    \\ \hline
+    \centering
+    \begin{tabular}{c|c|c|c|c|c|}
+    \cline{2-6}  
+    & \cellcolor[HTML]{EFEFEF} $g_m$ [mS] & \cellcolor[HTML]{EFEFEF} $\beta$ & \cellcolor[HTML]{EFEFEF} $r_\pi$ [\si{\kilo\ohm}] & \cellcolor[HTML]{EFEFEF} $r_0$ [\si{\kilo\ohm}] & \cellcolor[HTML]{EFEFEF} $V_T$ [\si{\milli\volt}] \\ \cline{1-6} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{EFEFEF} BC547B} & 38,218 & 330 & 8,635 & 33,33 & \multirow{2}{*}{25} \\ \cline{1-5}
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{EFEFEF} BC547C} & 40,987 & 580 & 14,151 & 16,67 & \\ \hline
     \end{tabular}
 \end{table}
 %-----------------------------------
@@ -88,4 +132,53 @@
     end
 (...)
 \end{lstlisting}
+%-----------------------------------
+
+
+%Copiar para circuito em circuitikz
+%-----------------------------------
+\begin{figure}[H]
+    \centering{\resizebox{0.45\textwidth}{!}{
+    \begin{circuitikz}[american, thick] 
+    \draw
+	(0,0) node[npn](npn1){$T_1$}
+	(npn1.B) to [R,l_=$R_g$,-*] ++(-2,0) node[left](gnd1){$V_g$}
+	(npn1.E) -- (0,-1)
+	(npn1.C) to [R,l=$R_C$] (0,3) -- (0,2.9) to[short,-*] (0,3) node[above]{\SI{12}{\volt}}
+	(0,-1) node[ground]{}
+	;
+    \end{circuitikz}}}
+    \caption{Título.}
+    \label{sch:exemplo.1}
+\end{figure}
+%-----------------------------------
+
+
+%Copiar para circuito sibe-by-side em circuitikz
+%-----------------------------------
+\vspace*{-0.2cm}
+\begin{figure}[H]
+    \centering
+    \subfloat[][Título a.]{\label{sch:exemplo.2.a}\resizebox{0.35\textwidth}{!}{\centering{\begin{circuitikz}[american voltages, thick]
+    \draw
+	(0,0) node[npn](npn1){$T_1$}
+	(npn1.B) to [R,l_=$R_g$,-*] ++(-2,0) node[left](gnd1){$V_g$}
+	(npn1.E) -- (0,-1)
+	(npn1.C) to [R,l=$R_C$] (0,3) -- (0,2.9) to[short,-*] (0,3) node[above]{\SI{12}{\volt}}
+	(0,-1) node[ground]{}
+	;
+    \end{circuitikz}}}}\qquad
+    \subfloat[][Título b.]{\label{sch:exemplo.2.b}\resizebox{0.35\textwidth}{!}{\centering{
+    \begin{circuitikz}[american voltages, thick]
+    \draw
+	(0,0) node[npn](npn1){$T_1$}
+	(npn1.B) to [R,l_=$R_g$,-*] ++(-2,0) node[left](gnd1){$V_g$}
+	(npn1.E) -- (0,-1)
+	(npn1.C) to [R,l=$R_C$] (0,3) -- (0,2.9) to[short,-*] (0,3) node[above]{\SI{12}{\volt}}
+	(0,-1) node[ground]{}
+	;
+    \end{circuitikz}}}}
+    \caption{Título.}
+    \label{sch:exemplo.2}
+\end{figure}
 %-----------------------------------
