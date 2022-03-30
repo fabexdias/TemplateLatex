@@ -80,7 +80,8 @@
 %Criação de um comando para meter o link com hiperligação e a azul
 
 \addtocontents{toc}{\protect\thispagestyle{paging}}
-%Isto garante que o índice tem o devido rodapé
+%\tocloftpagestyle{paging}
+%Isto garante que o índice tem o devido rodapé (usar um quando o outro não funciona e vice-versa)
 
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 %Isto põe os pontinhos no índice
@@ -88,9 +89,6 @@
 \renewcommand{\cftsecpagefont}{\normalfont}
 \renewcommand{\cftsecfont}{\normalfont}
 %Isto tira os negritos no índice
-
-\setlength{\belowcaptionskip}{-0.2cm}
-%Isto aconchega melhor as imagens
 
 \addtolength{\cftsubsubsecnumwidth}{1mm}
 \addtolength{\cftsubsecnumwidth}{1mm}
